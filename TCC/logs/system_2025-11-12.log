@@ -1,0 +1,8 @@
+[2025-11-12 23:26:06] [INFO] Login de usuário realizado: João Técnico (tecnico@sistema.com)
+[2025-11-12 23:49:56] [WARNING] Tentativa de login falhou: empresa não encontrada - atendente@sistema.com
+[2025-11-12 23:50:03] [WARNING] Tentativa de login falhou: senha incorreta - atendente@sistema.com
+[2025-11-12 23:50:13] [WARNING] Tentativa de login falhou: senha incorreta - atendente@sistema.com
+[2025-11-12 23:50:25] [WARNING] Tentativa de login falhou: senha incorreta - atendente@sistema.com
+[2025-11-12 23:50:48] [WARNING] Tentativa de login falhou: senha incorreta - atendente@sistema.com
+[2025-11-12 23:51:06] [WARNING] Tentativa de login falhou: senha incorreta - atendente@sistema.com
+[2025-11-12 23:51:22] [WARNING] Tentativa de login falhou: senha incorreta - admin@sistema.com

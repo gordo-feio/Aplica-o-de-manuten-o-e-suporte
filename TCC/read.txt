@@ -1,0 +1,702 @@
+over automaticamente e reatribuir para outro técnico
+- Notificar atendente da mudança
+
+---
+
+#### 12.1.3 OS sem Nenhum Técnico Disponível
+**Problema:** Nenhum técnico ativo no sistema
+
+**Solução:**
+- Mostrar alerta ao atendente ao criar OS
+- Enviar email para admin
+- OS fica em estado 'available' até alguém estar disponível
+- Dashboard admin mostra alerta de "OS sem cobertura"
+
+---
+
+#### 12.1.4 Todos os Técnicos Recusam OS
+**Problema:** OS fica muito tempo sem ser aceita
+
+**Solução:**
+- Sistema de escalonamento automático
+- Após X horas → notificar supervisor/admin
+- Permitir atribuição forçada por admin
+- Aumentar prioridade automaticamente
+
+---
+
+#### 12.1.5 OS Ultrapassou Prazo
+**Problema:** Deadline passou e OS ainda não foi concluída
+
+**Solução:**
+- Badge vermelho "ATRASADA"
+- Notificação para técnico, atendente e admin
+- Aparecer em relatório de OS atrasadas
+- Bloquear fechamento sem justificativa
+
+---
+
+#### 12.1.6 Técnico Sai da OS no Meio
+**Problema:** Técnico precisa sair por motivo urgente
+
+**Solução:**
+- Botão "Solicitar Substituição"
+- Notifica atendente
+- Atendente pode:
+  - Adicionar outro técnico como support
+  - Remover o técnico e adicionar substituto
+  - Cancelar OS e criar nova
+
+---
+
+#### 12.1.7 Ticket Alterado Após OS Criada
+**Problema:** Empresa altera descrição do ticket
+
+**Solução:**
+- Notificar técnicos da OS automaticamente
+- Mostrar badge "Atualizado" na OS
+- Log de alterações visível
+
+---
+
+#### 12.1.8 Empresa Cancela Ticket com OS Ativa
+**Problema:** Empresa quer cancelar serviço
+
+**Solução:**
+- Notificar técnicos imediatamente
+- Status OS → 'cancelled'
+- Pedir confirmação se técnico já está no local
+- Registrar motivo do cancelamento
+
+---
+
+---
+
+## 📈 13. MÉTRICAS E RELATÓRIOS
+
+### 13.1 Relatórios Necessários
+
+#### 13.1.1 Relatório de Performance por Técnico
+**Dados:**
+- Total de OS aceitas
+- Total de OS concluídas
+- Tempo médio de conclusão
+- Taxa de conclusão no prazo
+- Avaliação média (se houver sistema de avaliação)
+- OS em andamento
+- OS atrasadas
+
+**Período:** Hoje, Semana, Mês, Ano, Customizado
+
+**Formato:** Tabela + Gráficos
+
+---
+
+#### 13.1.2 Relatório de OS por Status
+**Dados:**
+- Quantidade por status
+- Gráfico de pizza
+- Evolução temporal (linha do tempo)
+- Tempo médio em cada status
+
+---
+
+#### 13.1.3 Relatório de OS por Prioridade
+**Dados:**
+- Distribuição de prioridades
+- Tempo médio de atendimento por prioridade
+- Taxa de cumprimento de prazo por prioridade
+
+---
+
+#### 13.1.4 Relatório de Colaboração
+**Dados:**
+- OS com múltiplos técnicos
+- Combinações de técnicos mais frequentes
+- Eficiência de equipes vs. técnico único
+
+---
+
+#### 13.1.5 Relatório de Disponibilidade
+**Dados:**
+- Tempo médio até primeira aceitação
+- OS que ficaram muito tempo disponíveis
+- Horários de pico (mais OS criadas)
+- Cobertura de técnicos por horário
+
+---
+
+---
+
+## 🔄 14. INTEGRAÇÕES E AUTOMAÇÕES
+
+### 14.1 Sistema de Escalonamento Automático
+
+**Regra 1:** OS disponível por mais de 30 minutos → Notificar supervisor
+
+**Regra 2:** OS disponível por mais de 1 hora (prioridade high) → Escalonar para admin
+
+**Regra 3:** OS atrasada → Notificação diária até resolução
+
+**Regra 4:** Técnico sem aceitar OS há X dias → Notificar para verificar disponibilidade
+
+---
+
+### 14.2 Sistema de Pontuação (Gamificação - Futuro)
+
+**Pontos por:**
+- Aceitar OS rapidamente (+10)
+- Concluir no prazo (+20)
+- Concluir antes do prazo (+30)
+- Avaliacão positiva da empresa (+15)
+- Ajudar como support (+5)
+
+**Ranking:**
+- Técnico do mês
+- Melhor tempo médio
+- Maior taxa de conclusão
+
+---
+
+### 14.3 Notificações por Email
+
+**Criar template de email para:**
+- Nova OS disponível (técnicos)
+- OS aceita (atendente/empresa)
+- OS concluída (empresa/atendente)
+- OS atrasada (todos os envolvidos)
+- Resumo diário para técnicos (suas OS ativas)
+
+---
+
+### 14.4 SMS/WhatsApp (Futuro)
+
+**Integração com API para:**
+- Notificar técnico em campo
+- Confirmar chegada no local
+- Enviar localização
+
+---
+
+---
+
+## 🧪 15. TESTES NECESSÁRIOS
+
+### 15.1 Testes Funcionais
+
+#### 15.1.1 Criação de OS
+- ✅ Atendente pode criar OS de ticket assumido
+- ✅ Sistema impede criar OS de ticket não assumido
+- ✅ Sistema impede criar OS duplicada
+- ✅ Prazo calculado corretamente por prioridade
+- ✅ Todos os técnicos recebem notificação
+
+---
+
+#### 15.1.2 Aceitação de OS
+- ✅ Técnico pode aceitar OS disponível
+- ✅ Primeiro técnico vira primary
+- ✅ Sistema impede dois técnicos aceitarem simultaneamente
+- ✅ Status atualiza corretamente
+- ✅ Notificações enviadas
+
+---
+
+#### 15.1.3 Múltiplos Técnicos
+- ✅ Primary pode adicionar support
+- ✅ Atendente pode adicionar support
+- ✅ Support não pode adicionar outros
+- ✅ Não permite adicionar técnico já na OS
+- ✅ Remoção de técnico funciona corretamente
+- ✅ Promoção de support para primary quando necessário
+
+---
+
+#### 15.1.4 Conclusão de OS
+- ✅ Técnico pode marcar sua parte como concluída
+- ✅ OS só completa quando todos finalizarem
+- ✅ Ticket atualiza status
+- ✅ Empresa é notificada
+
+---
+
+### 15.2 Testes de Segurança
+
+- ✅ Empresa não pode aceitar OS
+- ✅ Técnico não pode aceitar OS de outro após já ter aceitado
+- ✅ Validação de CSRF token em todas as ações
+- ✅ SQL Injection prevenido (prepared statements)
+- ✅ XSS prevenido (sanitização de inputs)
+
+---
+
+### 15.3 Testes de Performance
+
+- ✅ Listagem de OS disponíveis rápida (< 1s)
+- ✅ Aceitação de OS instantânea (< 500ms)
+- ✅ Notificações não travam o sistema
+- ✅ Dashboard carrega em menos de 2s
+
+---
+
+### 15.4 Testes de Usabilidade
+
+- ✅ Fluxo intuitivo para técnico
+- ✅ Fácil de usar em dispositivos móveis
+- ✅ Mensagens de erro claras
+- ✅ Confirmações antes de ações críticas
+
+---
+
+---
+
+## 📱 16. MELHORIAS FUTURAS (ROADMAP)
+
+### 16.1 Fase 1 (MVP - Funcionalidade Básica)
+- ✅ Criação de OS
+- ✅ Sistema de aceitação (primeiro a clicar)
+- ✅ Múltiplos técnicos
+- ✅ Notificações básicas
+- ✅ Conclusão de OS
+
+---
+
+### 16.2 Fase 2 (Melhorias)
+- 📍 GPS/Localização em tempo real
+- 📸 Upload de fotos no campo (antes/depois)
+- ⏱️ Timer de trabalho (controle de horas)
+- 📝 Checklist de tarefas por OS
+- ⭐ Sistema de avaliação da empresa
+
+---
+
+### 16.3 Fase 3 (Avançado)
+- 🤖 Sugestão automática de técnico (IA/ML)
+- 📊 Dashboard analítico avançado
+- 🗺️ Roteamento otimizado de múltiplas OS
+- 💬 Chat em tempo real entre equipe
+- 📱 App mobile nativo
+
+---
+
+### 16.4 Fase 4 (Enterprise)
+- 🔗 API pública para integrações
+- 📧 Sistema de email próprio
+- 📲 Integração WhatsApp Business
+- 🎯 Sistema de metas e KPIs
+- 💰 Controle de custos por OS
+
+---
+
+---
+
+## 🗂️ 17. ESTRUTURA DE ARQUIVOS - RESUMO
+
+### 17.1 Novos Arquivos a Criar
+
+```
+classes/
+├── WorkOrder.php                    # Classe principal de OS
+└── WorkOrderNotification.php        # Notificações específicas de OS
+
+ajax/
+├── create_work_order.php            # Criar OS
+├── accept_work_order.php            # Aceitar OS
+├── add_technician_to_os.php         # Adicionar técnico
+├── remove_technician_from_os.php    # Remover técnico
+├── complete_work_order.php          # Concluir OS
+├── get_available_work_orders.php    # Listar disponíveis
+├── get_work_order_details.php       # Detalhes da OS
+└── get_my_work_orders.php           # Minhas OS
+
+views/work_orders/
+├── available.php                    # Lista de OS disponíveis
+├── view.php                         # Detalhes da OS
+├── my_orders.php                    # Minhas OS (técnico)
+└── manage.php                       # Gerenciar OS (atendente/admin)
+
+sql/
+└── work_orders_migration.sql        # Script de criação das tabelas
+```
+
+---
+
+### 17.2 Arquivos a Modificar
+
+```
+config/
+└── constants.php                    # Adicionar constantes de OS
+
+includes/
+└── functions.php                    # Adicionar funções helper de OS
+
+views/dashboard/
+├── dash_tecnico.php                 # Adicionar seção de OS
+└── dash_atendente.php               # Adicionar botão criar OS
+
+ajax/
+└── dispatch_ticket.php              # Modificar para criar OS ao invés de apenas despachar
+```
+
+---
+
+---
+
+## 🎯 18. CHECKLIST DE IMPLEMENTAÇÃO
+
+### 18.1 Preparação do Banco de Dados
+- [ ] Criar tabela `work_orders`
+- [ ] Criar tabela `work_order_technicians`
+- [ ] Criar tabela `work_order_logs`
+- [ ] Adicionar campos em `tickets` (has_work_order, work_order_id)
+- [ ] Adicionar novo status em tickets (work_order_created)
+- [ ] Criar índices necessários
+- [ ] Testar integridade referencial
+
+---
+
+### 18.2 Classes PHP
+- [ ] Criar `WorkOrder.php` com todos os métodos
+- [ ] Criar `WorkOrderNotification.php`
+- [ ] Testar cada método isoladamente
+- [ ] Adicionar tratamento de erros
+- [ ] Adicionar logs
+
+---
+
+### 18.3 Funções Helper
+- [ ] Adicionar funções em `functions.php`
+- [ ] Adicionar constantes em `constants.php`
+- [ ] Testar cada função
+
+---
+
+### 18.4 AJAX Endpoints
+- [ ] Criar todos os arquivos AJAX
+- [ ] Implementar validações de segurança
+- [ ] Testar com Postman/Insomnia
+- [ ] Adicionar tratamento de erros
+- [ ] Documentar parâmetros
+
+---
+
+### 18.5 Views (Front-end)
+- [ ] Criar página de OS disponíveis
+- [ ] Criar página de detalhes da OS
+- [ ] Criar página "Minhas OS"
+- [ ] Criar página de gerenciamento (admin)
+- [ ] Atualizar dashboards (técnico/atendente)
+- [ ] Adicionar modais necessários
+- [ ] Testar responsividade
+
+---
+
+### 18.6 Sistema de Notificações
+- [ ] Implementar notificações para técnicos
+- [ ] Implementar notificações para atendentes
+- [ ] Implementar notificações para empresas
+- [ ] Testar notificações em tempo real
+- [ ] Adicionar sons/badges
+
+---
+
+### 18.7 Testes
+- [ ] Testes funcionais
+- [ ] Testes de segurança
+- [ ] Testes de performance
+- [ ] Testes de usabilidade
+- [ ] Testes em diferentes navegadores
+- [ ] Testes mobile
+
+---
+
+### 18.8 Documentação
+- [ ] Documentar API endpoints
+- [ ] Criar manual do usuário (técnico)
+- [ ] Criar manual do usuário (atendente)
+- [ ] Documentar fluxos do sistema
+- [ ] Criar vídeos tutoriais (opcional)
+
+---
+
+### 18.9 Deploy
+- [ ] Backup do banco de dados
+- [ ] Executar migrations
+- [ ] Deploy dos novos arquivos
+- [ ] Testar em produção
+- [ ] Monitorar erros
+- [ ] Treinar usuários
+
+---
+
+---
+
+## 🚨 19. PONTOS DE ATENÇÃO CRÍTICOS
+
+### 19.1 Concorrência
+**PROBLEMA:** Dois técnicos aceitando OS ao mesmo tempo
+
+**SOLUÇÃO TÉCNICA:**
+```sql
+START TRANSACTION;
+SELECT * FROM work_orders WHERE id = ? FOR UPDATE;
+-- Verificar se ainda está available
+-- Se sim, atualizar
+COMMIT;
+```
+
+---
+
+### 19.2 Notificações em Massa
+**PROBLEMA:** Criar OS notifica 50 técnicos simultaneamente
+
+**SOLUÇÃO:**
+- Usar fila de jobs (background processing)
+- Ou notificações em lote
+- Ou websockets para tempo real
+
+---
+
+### 19.3 Logs Excessivos
+**PROBLEMA:** Muitos logs podem encher o banco
+
+**SOLUÇÃO:**
+- Política de retenção (90 dias)
+- Arquivar logs antigos
+- Indexar corretamente
+
+---
+
+### 19.4 Timezone
+**PROBLEMA:** Técnicos em fusos diferentes
+
+**SOLUÇÃO:**
+- Sempre salvar em UTC no banco
+- Converter para timezone do usuário no front-end
+- Deixar claro qual timezone na interface
+
+---
+
+### 19.5 Anexos/Imagens
+**PROBLEMA:** Técnicos tiram muitas fotos no campo
+
+**SOLUÇÃO:**
+- Comprimir imagens antes do upload
+- Limitar tamanho/quantidade
+- Armazenamento em cloud (S3, etc.)
+
+---
+
+---
+
+## 📊 20. QUERIES SQL ÚTEIS (EXEMPLOS)
+
+### 20.1 Listar OS Disponíveis
+```sql
+SELECT wo.*, t.title, t.description, c.name as company_name
+FROM work_orders wo
+INNER JOIN tickets t ON wo.ticket_id = t.id
+INNER JOIN companies c ON t.company_id = c.id
+WHERE wo.status = 'available'
+ORDER BY 
+    CASE wo.priority 
+        WHEN 'high' THEN 1 
+        WHEN 'medium' THEN 2 
+        ELSE 3 
+    END,
+    wo.created_at ASC;
+```
+
+---
+
+### 20.2 Verificar se Técnico Pode Aceitar OS
+```sql
+SELECT COUNT(*) 
+FROM work_order_technicians 
+WHERE work_order_id = ? 
+AND technician_id = ?;
+-- Se retornar 0 → pode aceitar
+```
+
+---
+
+### 20.3 Obter Equipe da OS
+```sql
+SELECT 
+    wot.id,
+    wot.role,
+    wot.status,
+    wot.accepted_at,
+    u.name,
+    u.email,
+    u.phone
+FROM work_order_technicians wot
+INNER JOIN users u ON wot.technician_id = u.id
+WHERE wot.work_order_id = ?
+ORDER BY 
+    CASE wot.role 
+        WHEN 'primary' THEN 1 
+        ELSE 2 
+    END;
+```
+
+---
+
+### 20.4 Estatísticas do Técnico
+```sql
+SELECT 
+    COUNT(*) as total,
+    SUM(CASE WHEN wot.status = 'completed' THEN 1 ELSE 0 END) as completed,
+    SUM(CASE WHEN wo.status = 'in_progress' THEN 1 ELSE 0 END) as in_progress,
+    AVG(TIMESTAMPDIFF(HOUR, wot.accepted_at, wot.completed_at)) as avg_hours
+FROM work_order_technicians wot
+INNER JOIN work_orders wo ON wot.work_order_id = wo.id
+WHERE wot.technician_id = ?
+AND MONTH(wot.created_at) = MONTH(CURRENT_DATE())
+AND YEAR(wot.created_at) = YEAR(CURRENT_DATE());
+```
+
+---
+
+### 20.5 OS Atrasadas
+```sql
+SELECT wo.*, t.title, c.name as company_name
+FROM work_orders wo
+INNER JOIN tickets t ON wo.ticket_id = t.id
+INNER JOIN companies c ON t.company_id = c.id
+WHERE wo.status = 'in_progress'
+AND wo.deadline < NOW()
+ORDER BY wo.deadline ASC;
+```
+
+---
+
+---
+
+## 🎓 21. BOAS PRÁTICAS
+
+### 21.1 Código
+- ✅ Usar prepared statements (PDO)
+- ✅ Validar TODOS os inputs
+- ✅ Sanitizar outputs (XSS)
+- ✅ Usar transações para operações críticas
+- ✅ Comentar código complexo
+- ✅ Seguir PSR-12 (padrão PHP)
+- ✅ Evitar duplicação de código
+
+---
+
+### 21.2 Segurança
+- ✅ CSRF token em todos os forms
+- ✅ Verificar permissões antes de cada ação
+- ✅ Logs de ações sensíveis
+- ✅ Rate limiting em APIs
+- ✅ Hashing de senhas (já implementado)
+- ✅ HTTPS obrigatório em produção
+
+---
+
+### 21.3 Performance
+- ✅ Índices corretos no banco
+- ✅ Cache de queries frequentes
+- ✅ Paginação em listagens grandes
+- ✅ Lazy loading de imagens
+- ✅ Minificar CSS/JS em produção
+- ✅ CDN para assets estáticos
+
+---
+
+### 21.4 UX
+- ✅ Feedback visual em todas as ações
+- ✅ Loading states
+- ✅ Mensagens de erro claras
+- ✅ Confirmação antes de ações destrutivas
+- ✅ Atalhos de teclado
+- ✅ Design responsivo
+
+---
+
+---
+
+## 📞 22. SUPORTE E MANUTENÇÃO
+
+### 22.1 Monitoramento
+
+**Métricas a monitorar:**
+- Tempo médio de resposta das APIs
+- Quantidade de OS criadas/dia
+- Tempo médio até aceitação
+- Taxa de conclusão no prazo
+- Erros 500 (logs)
+- Notificações não entregues
+
+---
+
+### 22.2 Backup
+
+**Estratégia:**
+- Backup diário automático
+- Retenção de 30 dias
+- Backup antes de updates
+- Testar restore mensalmente
+
+---
+
+### 22.3 Logs
+
+**Estrutura de logs:**
+```
+logs/
+├── work_orders_YYYY-MM-DD.log       # Ações em OS
+├── notifications_YYYY-MM-DD.log     # Notificações
+├── errors_YYYY-MM-DD.log            # Erros
+└── performance_YYYY-MM-DD.log       # Performance
+```
+
+---
+
+---
+
+## ✅ 23. CONCLUSÃO
+
+Esta documentação fornece **TODO o planejamento necessário** para implementar o sistema de Ordem de Serviço com as seguintes funcionalidades principais:
+
+### ✨ Funcionalidades Core
+1. ✅ Criação de OS a partir de ticket assumido
+2. ✅ Sistema de aceitação (primeiro a clicar leva)
+3. ✅ Múltiplos técnicos na mesma OS
+4. ✅ Notificações em tempo real
+5. ✅ Controle de status e prazos
+6. ✅ Dashboard específico para técnicos
+7. ✅ Relatórios e estatísticas
+
+### 📋 Próximos Passos
+1. **Revisar** esta documentação com a equipe
+2. **Priorizar** as funcionalidades (MVP primeiro)
+3. **Criar** o script SQL das tabelas
+4. **Implementar** as classes PHP
+5. **Desenvolver** os endpoints AJAX
+6. **Criar** as interfaces (views)
+7. **Testar** exaustivamente
+8. **Treinar** os usuários
+9. **Deploy** em produção
+10. **Monitorar** e iterar
+
+---
+
+## 🎯 RESUMO EXECUTIVO FINAL
+
+| Item | Quantidade | Status |
+|------|------------|--------|
+| Tabelas Novas | 3 | 📝 A criar |
+| Alterações em Tabelas | 1 | 📝 A fazer |
+| Classes PHP Novas | 2 | 📝 A criar |
+| Endpoints AJAX Novos | 8 | 📝 A criar |
+| Views Novas | 4 | 📝 A criar |
+| Funções Helper | 10 | 📝 A adicionar |
+| Constantes | 4 arrays | 📝 A adicionar |
+| Alterações em Dashboards | 2 | 📝 A modificar |
+
+---
+
+**🎉 Documentação completa e pronta para implementação!**

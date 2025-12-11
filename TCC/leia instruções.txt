@@ -1,0 +1,170 @@
+sistema_suporte/
+│
+├── 📁 config/
+│   ├── database.php          # Configuração de conexão com BD
+│   ├── config.php            # Configurações gerais do sistema
+│   └── constants.php         # Constantes (status, categorias, etc)
+│   └── paths.php 
+│
+├── 📁 includes/
+│   ├── header.php            # Header HTML padrão
+│   ├── footer.php            # Footer HTML padrão
+│   ├── sidebar.php           # Sidebar de navegação
+│   └── functions.php         # Funções auxiliares globais
+│
+├── 📁 classes/
+│   ├── Database.php          # Classe de conexão PDO
+│   ├── Auth.php              # Classe de autenticação
+│   ├── User.php              # Classe de usuários
+│   ├── Company.php           # Classe de empresas
+│   ├── Ticket.php            # Classe de tickets
+│   ├── Notification.php      # Classe de notificações
+│   ├── Log.php               # Classe de logs
+│   └── Upload.php            # Classe para upload de arquivos
+│
+├── 📁 controllers/
+│   ├── LoginController.php
+│   ├── TicketController.php
+│   ├── UserController.php
+│   ├── CompanyController.php
+│   └── NotificationController.php
+│
+├── 📁 views/
+│   ├── 📁 auth/
+│   │   ├── login.php
+│   │   └── logout.php
+│   │
+│   ├── 📁 dashboard/
+│   │   ├── index.php         # Roteador principal
+│   │   ├── dash-empresa.php
+│   │   ├── dash-atendente.php
+│   │   ├── dash-tecnico.php
+│   │   ├── dash-admin.php
+│   │
+│   │
+│   ├── 📁 tickets/
+│   │   ├── index.php         # Lista de tickets (atendente)
+│   │   ├── create.php        # Criar ticket (empresa)
+│   │   ├── view.php          # Ver detalhes do ticket
+│   │   └── my-tickets.php    # Tickets da empresa
+│   │
+│   ├── 📁 users/
+│   │   ├── index.php         # Lista de usuários
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   └── profile.php
+│   │
+│   ├── 📁 companies/
+│   │   ├── index.php         # Lista de empresas
+│   │   ├── create.php
+│   │   └── edit.php
+│   │
+│   └── 📁 admin/
+│       ├── settings.php
+│       └── reports.php
+│
+├── 📁 public/
+│   ├── 📁 css/
+│   │   ├── style.css         # Estilos principais
+│   │   ├── dashboard.css
+│   │   └── responsive.css
+│   │
+│   ├── 📁 js/
+│   │   ├── main.js           # JavaScript principal
+│   │   ├── tickets.js        # Scripts específicos de tickets
+│   │   └── notifications.js  # Scripts de notificações
+│   │
+│   ├── 📁 images/
+│   │   ├── logo.png
+│   │   └── icons/
+│   │
+│   └── 📁 uploads/           # Arquivos anexados aos tickets
+│       └── .htaccess         # Proteção de acesso direto
+│
+├── 📁 ajax/
+│   ├── assume_ticket.php     # Assumir ticket via AJAX
+│   ├── dispatch_ticket.php   # Despachar equipe via AJAX
+│   ├── close_ticket.php      # Finalizar ticket via AJAX
+│   ├── get_notifications.php # Buscar notificações
+│   ├── add_comment.php
+│   ├── get-comments.php
+│   ├── mark_all_read.php
+│   ├── reopen_ticket.php
+│   └── mark_notification_read.php
+│
+├── 📁 api/
+│   └── tickets.php           # API REST (futura expansão)
+│
+├── 📁 cron/
+│   └── check_overdue.php     # Scripts agendados
+│
+├── 📁 logs/
+│   
+
+├── index.php                 # Arquivo principal (roteamento)
+├── BD.SQL
+└── README.md
+
+
+
+
+
+
+
+
+
+
+🎉 AEEEEE! FUNCIONOU!
+Fico muito feliz! 🥳🎊
+
+🔐 CREDENCIAIS DE ACESSO - USUÁRIOS PRÉ-CADASTRADOS
+👨‍💼 FUNCIONÁRIOS (Login em ?page=login)
+1. ADMINISTRADOR
+📧 Email: admin@sistema.com
+🔑 Senha: admin123
+👤 Nome: Administrador do Sistema
+🎖️ Cargo: Admin (acesso total)
+```
+
+#### **2. ATENDENTE**
+```
+📧 Email: atendente@sistema.com
+🔑 Senha: atendente123
+👤 Nome: Carlos Atendente
+🎖️ Cargo: Atendente
+```
+
+#### **3. TÉCNICO**
+```
+📧 Email: tecnico@sistema.com
+🔑 Senha: tecnico123
+👤 Nome: João Técnico
+🎖️ Cargo: Técnico
+```
+
+---
+
+### 🏢 **EMPRESAS (Login em `?page=login-company`)**
+
+#### **1. EMPRESA ABC LTDA**
+```
+📧 Email: empresa1@email.com
+🔑 Senha: empresa123
+🏢 Nome: Empresa ABC Ltda
+📄 CNPJ: 12.345.678/0001-90
+```
+
+#### **2. TECH SOLUTIONS**
+```
+📧 Email: empresa2@email.com
+🔑 Senha: empresa123
+🏢 Nome: Tech Solutions
+📄 CNPJ: 98.765.432/0001-10
+```
+
+#### **3. COMERCIAL XYZ**
+```
+📧 Email: empresa3@email.com
+🔑 Senha: empresa123
+🏢 Nome: Comercial XYZ
+📄 CNPJ: 11.222.333/0001-44

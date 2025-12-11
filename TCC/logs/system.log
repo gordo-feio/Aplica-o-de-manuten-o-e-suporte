@@ -1,0 +1,27 @@
+[2025-11-04 15:08:45] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:42:24] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: empresa não encontrada - empresa1@email.com
+[2025-11-05 14:50:20] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: empresa não encontrada - empresa1@email.com
+[2025-11-05 14:50:36] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: empresa não encontrada - empresa1@email.com
+[2025-11-05 14:50:57] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: empresa não encontrada - empresa1@email.com
+[2025-11-05 14:51:16] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:51:37] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:52:48] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:56:20] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:56:55] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: senha incorreta - admin@sistema.com
+[2025-11-05 14:57:03] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: empresa não encontrada - admin@sistema.com
+[2025-11-05 15:04:27] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: usuário não encontrado - empresa1@email.com
+[2025-11-05 15:04:43] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 15:25:48] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 15:26:15] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 18:28:28] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 19:00:15] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 19:03:13] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 19:41:40] [WARNING] [Visitante - IP: ::1] Tentativa de login falhou: usuário não encontrado - empresa1@email.com
+[2025-11-05 19:41:49] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-05 19:43:23] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-06 17:12:30] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-06 18:57:00] [INFO] [Company #1 - Empresa ABC Ltda] Login de empresa realizado: Empresa ABC Ltda (empresa1@email.com)
+[2025-11-06 19:06:19] [INFO] [User #2 - Carlos Atendente (attendant)] Login de usuário realizado: Carlos Atendente (atendente@sistema.com)
+[2025-11-07 15:46:24] [INFO] [User #2 - Carlos Atendente (attendant)] Login de usuário realizado: Carlos Atendente (atendente@sistema.com)
+[2025-11-07 15:48:06] [INFO] [User #3 - João Técnico (technician)] Login de usuário realizado: João Técnico (tecnico@sistema.com)
+[2025-11-07 15:57:45] [INFO] [User #1 - Administrador do Sistema (admin)] Login de usuário realizado: Administrador do Sistema (admin@sistema.com)

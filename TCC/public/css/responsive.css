@@ -1,0 +1,388 @@
+/* ============================================
+   RESPONSIVE - ESTILOS RESPONSIVOS
+   Adaptações para diferentes tamanhos de tela
+   ============================================ */
+
+/* ===== BREAKPOINTS ===== */
+/* Mobile: < 576px */
+/* Tablet: 576px - 768px */
+/* Desktop: 768px - 992px */
+/* Large Desktop: > 992px */
+
+/* ===== TABLET (768px) ===== */
+@media (max-width: 768px) {
+    /* Container */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Navbar */
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 20px;
+    }
+    
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    /* Cards */
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .card-header {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    /* Botões */
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Formulários */
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    /* Tabelas - scroll horizontal */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table {
+        min-width: 600px;
+        font-size: 13px;
+    }
+    
+    .table th,
+    .table td {
+        padding: 8px 10px;
+    }
+    
+    /* Dashboard */
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 22px;
+    }
+    
+    .dashboard-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    /* Tickets Grid */
+    .tickets-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .ticket-card {
+        margin-bottom: 15px;
+    }
+    
+    .ticket-footer {
+        flex-direction: column;
+    }
+    
+    .ticket-footer .btn {
+        width: 100%;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Filtros */
+    .filters-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* ===== MOBILE (576px) ===== */
+@media (max-width: 576px) {
+    /* Tipografia */
+    body {
+        font-size: 14px;
+    }
+    
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    h4 { font-size: 16px; }
+    h5 { font-size: 14px; }
+    h6 { font-size: 12px; }
+    
+    /* Container */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Navbar */
+    .navbar-brand {
+        font-size: 18px;
+    }
+    
+    /* Cards */
+    .card-header {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .card-footer {
+        padding: 10px 12px;
+    }
+    
+    /* Botões */
+    .btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Formulários */
+    .form-control {
+        font-size: 13px;
+        padding: 8px;
+    }
+    
+    .form-label {
+        font-size: 13px;
+    }
+    
+    /* Dashboard */
+    .dashboard-content {
+        padding: 15px 10px;
+    }
+    
+    .dashboard-title {
+        font-size: 20px;
+    }
+    
+    /* Ticket Card */
+    .ticket-header {
+        padding: 12px;
+    }
+    
+    .ticket-body {
+        padding: 12px;
+    }
+    
+    .ticket-footer {
+        padding: 12px;
+    }
+    
+    .ticket-company {
+        font-size: 15px;
+    }
+    
+    .ticket-info-item {
+        font-size: 12px;
+    }
+    
+    .ticket-description {
+        font-size: 13px;
+    }
+    
+    /* Stats Card */
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
+    }
+    
+    /* Timeline */
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 10px;
+    }
+    
+    .timeline-item::before {
+        left: -18px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Notificações */
+    .notifications-list {
+        width: 100%;
+        left: 0;
+        right: 0;
+        max-width: 320px;
+        margin: 10px auto;
+    }
+    
+    /* Modal */
+    .modal-content {
+        padding: 15px;
+    }
+    
+    .modal-header {
+        font-size: 18px;
+    }
+    
+    /* Alertas */
+    .alert {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+    
+    /* Badges */
+    .badge {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 812px) and (orientation: landscape) {
+    .dashboard-sidebar {
+        width: 100%;
+        position: static;
+        max-height: none;
+    }
+    
+    .dashboard-content {
+        margin-left: 0;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* ===== LARGE DESKTOP (> 1200px) ===== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .tickets-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===== EXTRA LARGE (> 1600px) ===== */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .tickets-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+/* ===== UTILITÁRIOS RESPONSIVOS ===== */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+    
+    .show-mobile {
+        display: block;
+    }
+}
+
+/* ===== AJUSTES DE IMPRESSÃO ===== */
+@media print {
+    .navbar,
+    .sidebar,
+    .dashboard-sidebar,
+    .btn,
+    .filters-section,
+    .notifications-dropdown {
+        display: none !important;
+    }
+    
+    .dashboard-content {
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    .card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    body {
+        background-color: white;
+    }
+}
